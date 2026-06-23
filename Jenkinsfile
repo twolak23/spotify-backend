@@ -1,4 +1,1 @@
-pipeline {
-  agent none
-  stage ()
-}
+
