@@ -1,4 +1,8 @@
 pipeline {
   agent none
-  stage ()
+  stage ('Start') {
+    steps{
+      echo('Hello')
+    }
+  }
 }
