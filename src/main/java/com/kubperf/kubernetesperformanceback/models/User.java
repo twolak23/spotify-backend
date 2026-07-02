@@ -14,5 +14,5 @@ public class User {
     private String secret;
     private String nick;
     private String token;
-    private String name:
+    private String name;
 }
