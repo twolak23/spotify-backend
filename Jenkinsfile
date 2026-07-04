@@ -21,14 +21,11 @@ pipeline {
     stage ('Package') {
       steps {
         sh '''
-        docker build \
-          --tag kubernetes-performance-back:${BUILD_NUMBER} \
-          --tag kubernetes-performance-back:latest \
-          .
-
-        docker run --rm \
+        docker rm -f kubernetes-performance-back || true
+        docker run -d \
           --name kubernetes-performance-back \
-          -p 127.0.0.1:8081:8080 \
+          --restart unless-stopped \
+          -p 8081:8080 \
           kubernetes-performance-back:latest
         '''
       }
