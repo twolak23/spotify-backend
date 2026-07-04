@@ -6,11 +6,11 @@ pipeline {
   stages {
     stage ('Environment') {
         steps {
-            sh '''
+          sh '''
             java -version
             javac -version
             mvn -v
-            '''
+          '''
         }
     }
     stage ('Build and Test') {
