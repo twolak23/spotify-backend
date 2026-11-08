@@ -28,12 +28,10 @@ pipeline {
         }
       }
     }
-    stage ('Build Image') {
-      steps {
-        sh '''
-          docker build -t kubernetes-performance-back:$IMAGE_TAG .
-        '''
-      }
+    stage('Build Image') {
+        steps {
+            sh 'docker build -t spotify-backend:$IMAGE_TAG .'
+        }
     }
     stage ('Deploy development') {
       when {
@@ -41,7 +39,7 @@ pipeline {
       }
       steps {
         sh '''
-        docker rm -f kubernetes-performance-back || true
+        docker rm -f spotify-backend || true
         '''
       }
     }
