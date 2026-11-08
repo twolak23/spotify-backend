@@ -36,21 +36,7 @@ pipeline {
       }
     }
     stage ('Deploy development') {
-      when {
-          branch 'develop'
-      }
-      steps {
-        sh '''
-        docker rm -f kubernetes-performance-back || true
-        docker run -d \
-          --name kubernetes-performance-back \
-          --restart unless-stopped \
-          --label git.branch="$BRANCH_NAME" \
-          --label git.commit="$GIT_COMMIT" \
-          -p 8081:8080 \
-          kubernetes-performance-back:$IMAGE_TAG
-        '''
-      }
+
     }
   }
 }
