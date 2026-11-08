@@ -36,7 +36,14 @@ pipeline {
       }
     }
     stage ('Deploy development') {
-
+      when {
+          branch 'main'
+      }
+      steps {
+        sh '''
+        docker rm -f kubernetes-performance-back || true
+        '''
+      }
     }
   }
 }
