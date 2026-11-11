@@ -22,7 +22,7 @@ public class SpotifyService {
     public Map<String, Object> tempPlaylists;
 
     private final static String API_PREFIX = "https://api.spotify.com/v1/";
-    private final static String USER = "adamzebr";
+    private final static String USER = "21h3z55pecogcrafiq3bvnady?si=78b0fef0ec224cbd";
     private final static String ARTIST = "5LHRHt1k9lMyONurDHEdrp";
     private final static String ALBUM = "6hHIX3lfGKnZ2ji41YZMVV";
     private final static ParameterizedTypeReference<Map<String, Object>> MAP_RESPONSE =
