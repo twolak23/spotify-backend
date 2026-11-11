@@ -64,9 +64,9 @@ pipeline {
         }
 
         stage('Push to ECR') {
-            when {
-                branch 'main'
-            }
+//            when {
+//                branch 'main'
+//            }
             steps {
                 sh '''
                     set -eu
@@ -83,9 +83,9 @@ pipeline {
         }
 
         stage('Register ECS Task Definition') {
-            when {
-                branch 'main'
-            }
+//            when {
+//                branch 'main'
+//            }
             steps {
                 sh '''
                     set -eu
@@ -144,9 +144,9 @@ pipeline {
         }
 
         stage('Deploy to ECS') {
-            when {
-                branch 'main'
-            }
+//            when {
+//                branch 'main'
+//            }
             steps {
                 sh '''
                     set -eu
