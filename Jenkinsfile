@@ -12,12 +12,11 @@ pipeline {
     ECR_REPOSITORY = 'spotify-app/backend'
 
     ECS_CLUSTER = 'spotify-backend-cluster'
-    ECS_SERVICE = ''
     CONTAINER_NAME = 'Main'
   }
 
   stages {
-    stage('Initialize'){
+    stage('Initialize') {
       steps {
         script {
           if (!(env.BRANCH_NAME in ['main', 'develop'])) {
