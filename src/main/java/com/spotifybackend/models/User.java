@@ -1,4 +1,4 @@
-package com.kubperf.kubernetesperformanceback.models;
+package com.spotifybackend.models;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,8 @@
-package com.kubperf.kubernetesperformanceback.services;
+package com.spotifybackend.services;
 
-import com.kubperf.kubernetesperformanceback.models.User;
+import com.spotifybackend.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -15,10 +16,15 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Map;
 
 @Service
-public class AuthoriaztionService {
+public class AuthorizationService {
 
     @Autowired
     public User user;
+
+    @Value("${app.auth.username}")
+    private String username;
+    @Value("${app.auth.password}")
+    private String password;
 
     private final static String API_PREFIX = "https://accounts.spotify.com/";
     private final static String ACCESS_TOKEN = "access_token";
@@ -28,7 +34,7 @@ public class AuthoriaztionService {
     private final RestTemplate restTemplate;
 
 
-    public AuthoriaztionService() {
+    public AuthorizationService() {
         this.restTemplate = new RestTemplate();
     }
 
@@ -37,7 +43,7 @@ public class AuthoriaztionService {
 
         //create headers
         HttpHeaders headers = new HttpHeaders();
-        headers.setBasicAuth("32f3fa6fa3f54efcae8193f8d7da82c9","55649f1a2f6b47c2966574c62ac6d0e1");
+        headers.setBasicAuth(username, password);
 
         //create body
         MultiValueMap<String, String> body = new LinkedMultiValueMap<>();

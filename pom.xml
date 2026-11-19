@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kubperf</groupId>
-	<artifactId>kubernetes-performance-back</artifactId>
+	<artifactId>spotify-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kubernetes-performance-back</name>
+	<name>spotify-backend</name>
 	<description>Kubernetes performance analysis</description>
 	<properties>
 		<java.version>21</java.version>
@@ -51,14 +51,14 @@
 		</dependency>
 	</dependencies>
 
-	<build>
+    <build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>kubernetes-performance-back</finalName>
+		<finalName>spotify-backend</finalName>
 	</build>
 
 </project>

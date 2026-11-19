@@ -1,6 +1,6 @@
-package com.kubperf.kubernetesperformanceback.services;
+package com.spotifybackend.services;
 
-import com.kubperf.kubernetesperformanceback.models.User;
+import com.spotifybackend.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;

@@ -1,6 +1,6 @@
-package com.kubperf.kubernetesperformanceback.controllers;
+package com.spotifybackend.controllers;
 
-import com.kubperf.kubernetesperformanceback.services.SpotifyService;
+import com.spotifybackend.services.SpotifyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
