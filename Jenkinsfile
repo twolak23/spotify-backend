@@ -174,9 +174,15 @@ pipeline {
   }
 
   post {
-    always {
-      sh '''
-        rm -f current-task.json new-task.json task-definition-arn.txt
+  	always {
+    	sh '''
+      	echo "Cleaning Docker resources..."
+
+        docker image prune -af
+        docker builder prune -af
+
+        echo "Docker cleanup completed."
+        docker system df
       '''
     }
   }
